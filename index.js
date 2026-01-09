@@ -6,6 +6,8 @@ const connectToDb = require("./config/connectToDb")
 const authRouter = require("./routes/authRouter")
 const hotelRouter = require("./routes/hotelRouter")
 const roomRouter = require("./routes/roomRouter")
+const bookingRouter = require("./routes/bookingRouter")
+const userRouter = require("./routes/userRouter")
 
 dotenv.config()
 
@@ -22,8 +24,10 @@ app.listen(PORT, ()=>{
 
 
 app.use("/api/auth", authRouter)
+app.use("/api/users", userRouter)
 app.use("/api/hotels", hotelRouter)
 app.use("/api/hotel/rooms", roomRouter)
+app.use("/api/hotel/bookings", bookingRouter)
 
 
 
