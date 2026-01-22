@@ -23,9 +23,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 app.use(morgan("dev"))
 
-app.listen(PORT, ()=>{
-    console.log(`server running on port ${PORT}`)
-})
 
 
 app.use("/api/auth", authRouter)
@@ -35,6 +32,9 @@ app.use("/api/hotel/rooms", roomRouter)
 app.use("/api/hotel/bookings", bookingRouter)  
 
 
+app.listen(PORT, ()=>{
+    console.log(`server running on port ${PORT}`)
+})
 
 
 
