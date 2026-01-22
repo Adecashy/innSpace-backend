@@ -16,7 +16,7 @@ dotenv.config()
 const PORT = process.env.PORT
 connectToDb()
 
-app.post("/api/hotel/bookings/webhook", express.raw({ type: "*/*" }), activateToCreateBooking)
+app.post("/api/hotel/bookings/webhook", express.raw({ type: "application/json" }), activateToCreateBooking)
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
