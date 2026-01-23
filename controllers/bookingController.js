@@ -83,6 +83,7 @@ const prepareBooking = async (req, res) => {
 
 
 const initializeBookingPayment = async (req, res) => {
+  console.log("initializing booking payment");
     try {
         const userId = req.user._id
         const { hotelId, roomIds, checkInDate, checkOutDate, guests } = req.body

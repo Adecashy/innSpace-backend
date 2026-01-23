@@ -10,6 +10,7 @@ const roomRouter = require("./routes/roomRouter")
 const bookingRouter = require("./routes/bookingRouter")
 const userRouter = require("./routes/userRouter")
 const { activateToCreateBooking } = require("./controllers/bookingController")
+const { CheckHealth } = require("./controllers/health")
 
 dotenv.config()
 
@@ -30,6 +31,7 @@ app.use("/api/users", userRouter)
 app.use("/api/hotels", hotelRouter)
 app.use("/api/hotel/rooms", roomRouter)
 app.use("/api/hotel/bookings", bookingRouter)  
+app.use("/health", CheckHealth);
 
 
 app.listen(PORT, ()=>{
